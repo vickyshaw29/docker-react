@@ -1,0 +1,11 @@
+sudo: required
+services:
+  - docker
+
+before_install: 
+  - docker build -t vickyprasad/docker-test -f Dockerfile.dev .
+
+script:
+  - docker run vickyprasad/docker-react npm run test -- -- coverage
+
+  
